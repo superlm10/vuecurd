@@ -42,7 +42,7 @@
                             </el-select>
                             <el-date-picker
                                     v-if="item.componentType === 'rangedate'" start-placeholder="请选择开始日期" end-placeholder="请选择结束日期"
-                                    type="daterange" align="right" v-model="item.value" @change="changeDate"
+                                    type="daterange" align="right" v-model="item.value"
                                     value-format = "yyyy-MM-dd"
                             >
                             </el-date-picker>
@@ -113,7 +113,7 @@
                     //不处理
                     return;
                 } else if (item.model === 'url') {
-                    //@TODO 请求地址
+                    //@TODO 请求后台地址获取下拉框选项
                 }
             },
         }
