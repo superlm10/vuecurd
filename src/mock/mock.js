@@ -11,11 +11,16 @@ let urlPre = axiosConfig.defaults.baseURL;
 Mock.mock(urlPre + '/test/table', 'post', {
     "resCode": "0000",
     "resMsg": "success",
-    "resData": [{"skill": "vvv", "name": "lm-布莱恩特", "age": "22"}, {
-        "skill": "vvv",
-        "name": "勒布朗-zr",
-        "age": "22"
-    }, {"skill": "vvv", "name": "詹姆斯-sd", "age": "22"}]
+    "resData": {
+        "tableData": [{"skill": "vvv", "name": "lm-布莱恩特", "age": "22"}, {
+            "skill": "vvv",
+            "name": "勒布朗-zr",
+            "age": "22"
+        }, {"skill": "vvv", "name": "詹姆斯-sd", "age": "22"}],
+        "pageInfo": {
+            "total": 3
+        }
+    }
 });
 
 Mock.mock(urlPre + '/test/status', 'get', {

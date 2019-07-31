@@ -2,7 +2,7 @@
     <div>
         <my-query :searchInfo="searchInfo"  @searchPost="searchPost" @searchPre="loadingTable" ref="mySearch"></my-query>
         <my-table :tableInfo="tableInfo" ref="myTable"></my-table>
-        <my-pagitation :pageInfo="pageInfo" @updatePageInfo="updatePageInfo"></my-pagitation>
+        <my-pagitation :pageInfo="pageInfo" @updatePageInfo="updatePageInfo" ref="myPagitation"></my-pagitation>
     </div>
 
 </template>
@@ -40,9 +40,11 @@
              */
             searchPost(axioObj) {
                 axioObj.then(result => {
-
+                    //demo
                     if (result.resCode === '0000') {
-                        this.refreshTable(result.resData);
+                        this.refreshTable(result.resData.tableData);
+                        this.pageInfo.total = result.resData.pageInfo.total;
+                        this.refreshPagitation(pageInfo);
                     }
 
                     this.loadingTable(false);
@@ -65,6 +67,14 @@
              */
             refreshTable(data) {
                 this.$refs.myTable.updateTableData(data);
+            },
+
+            /**
+             * 刷新分页信息
+             * @param data
+             */
+            refreshPagitation(data) {
+                this.$refs.myPagitation.updatePageInfo(data);
             },
 
             loadingTable(val) {
@@ -145,8 +155,7 @@
 
             this.pageInfo = this.dataBuilder.buildPagination({
                 page: 1,
-                size: 10,
-                total: 20
+                size: 10
             });
         }
     }

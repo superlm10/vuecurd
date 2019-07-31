@@ -17,11 +17,15 @@ let dataBuilder = {
         let defaultPageSizes = [10,20,50,100,150];
         if (val) {
             let obj = pagitaionModel.parse(val);
-            obj.pageSizes = defaultPageSizes;
+            if (!obj.pageSizes) {
+                obj.pageSizes = defaultPageSizes;
+            }
             return obj;
         } else {
             let obj = pagitaionModel.parse({});
-            obj.pageSizes = defaultPageSizes;
+            if (!obj.pageSizes) {
+                obj.pageSizes = defaultPageSizes;
+            }
             return obj;
         }
 

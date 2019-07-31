@@ -39,6 +39,9 @@
             notify() {
                 this.$emit("update:pageInfo", this.formatPageInfo);
                 this.$emit("updatePageInfo");
+            },
+            updatePageInfo(val) {
+                this.formatPageInfo = val;
             }
         }
 
