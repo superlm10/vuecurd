@@ -1,10 +1,18 @@
+
+//分页入参结构
+let pageinfoStruct = {
+    page: '',
+    size: ''
+}
+
 let urlParseApi = {
 
     /**
      * 解析构造http请求对象
      * @param searchModel
+     * @param pageinfo 可为空
      */
-    parseRequest(searchModel) {
+    parseRequest(searchModel, pageinfo) {
 
         let requestData = {};
 
@@ -36,6 +44,14 @@ let urlParseApi = {
             }
 
         }
+
+        if (pageinfo) {
+            pageinfoStruct.page = pageinfo.page;
+            pageinfoStruct.size = pageinfo.size;
+
+            requestData.pageInfo = Object.assign({}, pageinfoStruct);
+        }
+
 
         return requestData;
     }

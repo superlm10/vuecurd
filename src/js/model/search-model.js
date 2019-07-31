@@ -23,7 +23,11 @@ let searchItem = new Model({
     position: "",
 
     //在componentType为select的时候才生效
-    select: selectModel
+    select: selectModel,
+    customType: "",
+
+    //这个js-model 解析function不了, 如果需要自定义事件，不要使用search-model构建数据对象
+    //customFun: null
 });
 
 let searchModel = new Model({

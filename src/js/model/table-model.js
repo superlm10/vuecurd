@@ -1,4 +1,4 @@
-import model from 'js-model';
+import Model from 'js-model';
 
 let columnDefined = new Model({
 
@@ -15,8 +15,11 @@ let columnDefined = new Model({
 //表单数据格式定义
 let tableModel = new Model({
 
-    column: columnDefined,
-    list: []
+    //获取数据的地址
+    url: "",
+    column: [columnDefined],
+    loading: false,
+    tableData: []
 
 });
 
