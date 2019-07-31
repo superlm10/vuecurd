@@ -7,6 +7,10 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
 
+// mock数据，开发时自行清除
+import './mock/mock.js';
+
+
 Vue.config.productionTip = false;
 Vue.config.devtools = true
 

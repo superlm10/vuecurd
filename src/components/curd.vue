@@ -1,6 +1,6 @@
 <template>
     <div>
-        <my-query :searchInfo="searchInfo" :pageInfo.sync="pageInfo" @searchPost="searchPost" @searchPre="loadingTable" ref="mySearch"></my-query>
+        <my-query :searchInfo="searchInfo"  @searchPost="searchPost" @searchPre="loadingTable" ref="mySearch"></my-query>
         <my-table :tableInfo="tableInfo" ref="myTable"></my-table>
         <my-pagitation :pageInfo="pageInfo" @updatePageInfo="updatePageInfo"></my-pagitation>
     </div>
@@ -101,7 +101,7 @@
                         componentType: 'select',
                         position: 'normal',
                         select: {
-                            model: "normal",
+                            model: "url",
                             url: "/test/status",
                             option: [{
                                 label: '处理中',
