@@ -32,7 +32,7 @@
                             _this.item = item;
                             //弹出组件，弹框等...
                             ElementUI.Message({
-                                message: "自定义事件:" + item.name,
+                                message: "自定义事件: " + item.name,
                                 type: 'success'
                             })
                         }
