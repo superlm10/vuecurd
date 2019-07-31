@@ -12,7 +12,7 @@ export default new Router({
     {
       path: '/',
       name: 'demo',
-      component: () => import('./components/curd.vue')
+      component: () => import('./components/demo.vue')
     },
     {
       path: '/table',
