@@ -116,7 +116,6 @@
                         item.value = '';
                     }
                 }
-                this.doSearch();
             },
 
             selectHandler(item) {
